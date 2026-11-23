@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Um convite para a Thaynara</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#ffe6ea;--bg2:#ffa8ba;--ink:#6b0f1f;--soft:#a3283f;--red:#d00f35;--red2:#ff3b5c;--card:rgba(255,255,255,.9);--line:#ff9fb0;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#3b0716;--bg2:#7a0f2a;--ink:#fff0f2;--soft:#ffb3c1;--red:#ff4d6d;--red2:#ff7a93;--card:rgba(255,255,255,.08);--line:#8a2a40;color-scheme:dark}}
+:root[data-theme="dark"]{--bg1:#3b0716;--bg2:#7a0f2a;--ink:#fff0f2;--soft:#ffb3c1;--red:#ff4d6d;--red2:#ff7a93;--card:rgba(255,255,255,.08);--line:#8a2a40;color-scheme:dark}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;background:radial-gradient(circle at 15% 10%,rgba(255,77,109,.4),transparent 45%),radial-gradient(circle at 90% 85%,rgba(208,15,53,.3),transparent 50%),linear-gradient(160deg,var(--bg1),var(--bg2));background-attachment:fixed;color:var(--ink);font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;font-size:19px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(rgba(208,15,53,.12) 1.6px,transparent 1.8px);background-size:26px 26px;pointer-events:none;z-index:0}
+.bg{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.bg .h{position:absolute;bottom:-40px;color:var(--red2);opacity:.36;animation:up linear infinite}
+.bg .s{position:absolute;color:#fff;text-shadow:0 0 8px var(--red2);opacity:.2;animation:tw 3s ease-in-out infinite}
+.bg .c{position:absolute;font-size:64px;color:var(--red2);opacity:.22}
+@keyframes up{to{transform:translateY(-115vh) rotate(25deg)}}
+@keyframes tw{50%{opacity:.95;transform:scale(1.5)}}
+main{position:relative;z-index:1;max-width:460px;margin:0 auto;padding:28px 22px 40px;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.card{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:30px 22px;text-align:center;backdrop-filter:blur(6px);box-shadow:0 18px 50px rgba(208,15,53,.25);will-change:transform,opacity;animation:in .6s cubic-bezier(.22,1,.36,1)}
+.card.out{animation:none;opacity:0;transform:translateY(-14px) scale(.98);filter:blur(6px);transition:opacity .38s ease,transform .38s cubic-bezier(.4,0,.2,1),filter .38s ease}
+@keyframes in{from{opacity:0;transform:translateY(22px) scale(.98);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}
+.card>*{animation:rise .55s ease backwards}.card>*:nth-child(2){animation-delay:.07s}.card>*:nth-child(3){animation-delay:.14s}.card>*:nth-child(4){animation-delay:.21s}.card>*:nth-child(5){animation-delay:.28s}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+.burst{position:fixed;pointer-events:none;z-index:9;font-size:22px;color:var(--red2);animation:fly 1s ease-out forwards}
+@keyframes fly{to{transform:translate(var(--dx),var(--dy)) scale(.4) rotate(40deg);opacity:0}}
+.orn{color:var(--red2);letter-spacing:.5em;font-size:14px;margin:0 0 8px}
+.ic{font-size:34px;margin-bottom:4px}
+.name{font-family:'Great Vibes','Brush Script MT',cursive;font-size:60px;line-height:1.1;color:var(--red);margin:4px 0 14px;font-weight:400}
+h2{font-weight:600;font-size:27px;margin:0 0 6px;line-height:1.2}
+p.sub{color:var(--soft);margin:0 0 18px;font-style:italic}
+.q{font-size:26px;font-weight:600;min-height:72px;display:flex;align-items:center;justify-content:center;margin:0 0 6px;line-height:1.2}
+.stage{position:relative;height:320px;margin-top:8px}
+.btn{font-family:inherit;font-size:21px;font-weight:600;border:0;border-radius:999px;padding:13px 34px;cursor:pointer;transition:all .35s ease;color:#fff;background:linear-gradient(135deg,var(--red),var(--red2));box-shadow:0 6px 18px rgba(255,40,80,.45)}
+.btn:active{transform:scale(.96)}
+.btn.ghost{background:var(--card);color:var(--red);border:1.5px solid var(--red);box-shadow:none}
+#yes{position:absolute;left:50%;top:8px;transform:translateX(-50%)}
+#yes.big{animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{50%{transform:translateX(-50%) scale(2.55)}}
+#no{position:absolute;left:calc(50% - 38px);top:96px;white-space:nowrap}
+.field{width:100%;font-family:inherit;font-size:20px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:12px 14px;margin:6px 0 10px;outline:none;text-align:center}
+.field:focus{border-color:var(--red2)}
+label{display:block;color:var(--soft);font-size:18px;margin-top:8px;font-style:italic}
+.chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin:6px 0 14px}
+.chip{font-family:inherit;font-size:18px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer;transition:all .2s}
+.chip.on{background:var(--red);border-color:var(--red);color:#fff;transform:scale(1.06)}
+.note{background:rgba(255,59,92,.12);border-radius:14px;padding:12px 14px;margin:0 0 10px;animation:rise .4s ease}
+.dots{display:flex;gap:6px;justify-content:center;margin-bottom:18px;flex-wrap:wrap}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--line);transition:all .3s}
+.dots i.on{background:var(--red);transform:scale(1.3)}
+.nav{margin-top:10px;display:flex;flex-direction:column;gap:10px;align-items:center}
+a.btn{display:inline-block;text-decoration:none}
+.err{color:var(--red);font-size:16px;min-height:20px;margin:0}
+</style>
+</head>
+<body>
+<div class="bg" id="bg" aria-hidden="true"></div>
+<main><div id="app"></div></main>
+<script>
+// Perfil que recebe as respostas
+var INSTAGRAM = "lks_011"; // seu @ do Instagram, sem o @
+var NOME = "Thaynara";
+var A = {data:"", hora:"", v:{}}, step = 0, noCount = 0, busy = false;
+var MSGS = ["Tem certeza? Olha que eu sou bem simpático 🥺","Pensa de novo, Thay. Dessa vez com o coração, não com a cabeça.","Esse botão já está com medo de você 😅","Eu fiz esse site inteiro por isso. Sem pressão, tá?","Meu coração já fez as malas e está esperando na porta 🧳","Última chance, antes que eu mande o “Sim” te convencer.","O “Não” pediu demissão. Só sobrou uma opção 💘"];
+var S = [
+ {id:"open"},{id:"intro"},{id:"date"},
+ {id:"busca",type:"gate",lbl:"🚗 Carona",ic:"🚗",t:"Thay, você aceita que eu te busque?",s:"Prometo não ser o motorista de aplicativo disfarçado.",
+  y:{ft:"Então me diga: qual música deveria estar tocando quando você entrar no carro?",ph:"A trilha sonora da sua chegada…"},
+  n:{note:"Sem problemas! A gente se encontra lá. Eu só vou chegar um pouquinho mais cedo para ensaiar a minha cara de calmo. 😅"}},
+ {id:"lugar",type:"gate",lbl:"📍 Confia em mim para escolher o lugar",ic:"📍",t:"Meu bem, você confia em mim para escolher o lugar?",s:"Pode dizer não, mas meu orgulho vai sentir.",
+  y:{note:"Obrigado pela confiança, Thay! Prometo não te levar a nenhum lugar com karaokê. A menos que você peça. 🎤"},
+  n:{ft:"Justo! Então qual lugar você gostaria?",ph:"Um restaurante, um cantinho, uma ideia…"}},
+ {id:"restricao",type:"q",lbl:"🥗 Restrição alimentar",ic:"🥗",t:"Bonita, você tem alguma restrição alimentar?",s:"Alergia, dieta ou aquele ingrediente que você não suporta. Eu anoto tudo.",o:[],ph:"Se não houver, escreva “nenhuma”"},
+ {id:"chocolate",type:"q",lbl:"🍫 Chocolate favorito",ic:"🍫",t:"Thay, qual chocolate você mais gosta?",s:"Pergunta importantíssima. Pode marcar mais de um.",o:["Lacta","Garoto","Nestlé","Cacau Show","Ferrero Rocher","Lindt","Kopenhagen","Hershey’s"],multi:true,ph:"Não achou o seu? Escreva aqui qual é"},
+ {id:"filme",type:"q",lbl:"🎬 Filme favorito",ic:"🎬",t:"Meu anjo, qual é o seu filme favorito?",s:"🕵️ Pergunta misteriosa. Não me pergunte por quê. Vai fazer sentido mais para frente…",o:[],ph:"O título do filme…"},
+ {id:"fifa",type:"q",lbl:"🎮 FIFA depois do date",ic:"🎮",t:"Bonita, partidinha de FIFA depois do date?",s:"Aviso justo: eu jogo de verdade. Mas deixo você escolher o time. Talvez.",o:["Bora! 🎮","Só se eu puder ganhar","Prefiro um filme"],multi:false,ph:"Quer já escolher o seu time?"},
+ {id:"extra",type:"q",lbl:"💭 Mais alguma informação",ic:"💭",t:"Faltou mais alguma informação importante para você?",s:"Pode me contar, meu bem. Pode ser sério, bobo ou os dois.",o:[],ph:"Escreva aqui o que quiser…"},
+ {id:"final"}
+];
+var app = document.getElementById("app"), N = S.length - 3;
+var px0 = innerWidth/2, py0 = innerHeight/2;
+addEventListener("pointerdown", function(e){px0=e.clientX;py0=e.clientY});
+
+(function(){var s="",i,r=Math.random;
+ for(i=0;i<16;i++)s+='<span class="h" style="left:'+(r()*100)+'%;font-size:'+(12+r()*24)+'px;animation-duration:'+(14+r()*16)+'s;animation-delay:-'+(r()*20)+'s">♥</span>';
+ for(i=0;i<22;i++)s+='<span class="s" style="left:'+(r()*100)+'%;top:'+(r()*100)+'%;font-size:'+(8+r()*12)+'px;animation-delay:-'+(r()*3)+'s">✦</span>';
+ s+='<span class="c" style="left:8px;top:6px">❦</span><span class="c" style="right:8px;bottom:6px;transform:rotate(180deg)">❦</span>';
+ document.getElementById("bg").innerHTML=s})();
+
+function burst(){for(var i=0;i<8;i++){var h=document.createElement("div");h.className="burst";h.textContent=["♥","❤","💗","💕"][i%4];h.style.left=px0+"px";h.style.top=py0+"px";var a=Math.random()*6.28,r=60+Math.random()*90;h.style.setProperty("--dx",Math.cos(a)*r+"px");h.style.setProperty("--dy",(Math.sin(a)*r-40)+"px");document.body.appendChild(h);setTimeout(function(x){return function(){x.remove()}}(h),1000)}}
+function go(n){if(busy)return;busy=true;burst();var c=app.firstChild;if(c)c.classList.add("out");
+ setTimeout(function(){step=n;render();scrollTo(0,0);busy=false},380)}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function dots(){var d='<div class="dots">';for(var i=1;i<=N;i++)d+='<i class="'+(i<=step-1?'on':'')+'"></i>';return d+'</div>'}
+function save(g){var t=document.getElementById("tx");if(t)g.txt=t.value.trim()}
+
+function render(){
+ var q=S[step];
+ if(q.id==="open")return open_();
+ if(q.id==="intro")return intro();
+ if(q.id==="date")return date();
+ if(q.id==="final")return fin();
+ qpage(q);
+}
+function open_(){
+ app.innerHTML='<div class="card"><div class="ic">💌</div><div class="name" style="font-size:46px">Querida Thaynara,</div><p class="sub" style="font-size:22px;color:var(--ink);font-style:normal;line-height:1.5">venho por meio desta, com todo o respeito, um pouco de nervosismo e muito carinho, perguntar uma coisa muito importante…</p><div class="nav"><button class="btn" id="go">Continuar</button></div></div>';
+ document.getElementById("go").onclick=function(){go(1)};
+}
+function intro(){
+ noCount=0;
+ app.innerHTML='<div class="card"><p class="orn">♥ ♥ ♥</p><div class="name">'+NOME+'</div><div class="q" id="q">Você aceita sair comigo?</div><div class="stage" id="stage"><button class="btn" id="yes">Sim</button><button class="btn ghost" id="no">Não</button></div></div>';
+ document.getElementById("yes").onclick=function(){go(2)};
+ document.getElementById("no").onclick=onNo;
+}
+function onNo(){
+ noCount++;
+ var st=document.getElementById("stage"),no=document.getElementById("no"),yes=document.getElementById("yes");
+ document.getElementById("q").textContent=MSGS[noCount-1];
+ if(noCount>=7){
+  no.style.opacity=0;no.style.pointerEvents="none";setTimeout(function(){no.style.display="none"},350);
+  yes.classList.add("big");yes.style.top="105px";yes.style.transform="translateX(-50%) scale(2.3)";return;
+ }
+ var s=1+noCount*0.07;yes.style.transform="translateX(-50%) scale("+s+")";
+ var bw=no.offsetWidth,bh=no.offsetHeight,sw=st.clientWidth,sh=st.clientHeight,yw=yes.offsetWidth*s,yh=yes.offsetHeight*s,yl=sw/2-yw/2,yt=8+yes.offsetHeight/2-yh/2,px=no.offsetLeft,py=no.offsetTop,x,y,k=0,ok;
+ do{x=Math.random()*(sw-bw);y=Math.random()*(sh-bh);ok=(x>yl+yw+16||x+bw<yl-16||y>yt+yh+16||y+bh<yt-16)&&Math.hypot(x-px,y-py)>(k<50?110:0);k++}while(!ok&&k<80);
+ no.style.left=x+"px";no.style.top=y+"px";
+}
+function date(){
+ var t=new Date(),m=t.getFullYear()+"-"+String(t.getMonth()+1).padStart(2,"0")+"-"+String(t.getDate()).padStart(2,"0");
+ app.innerHTML='<div class="card">'+dots()+'<div class="ic">📅</div><h2>Que bom, meu anjo! Já posso respirar. Quando seria melhor para você?</h2><p class="sub">Escolha o dia e o horário. Prometo não aparecer 40 minutos antes.</p><label>Data</label><input class="field" type="date" id="d" min="'+m+'" value="'+A.data+'"><label>Horário</label><input class="field" type="time" id="h" value="'+A.hora+'"><p class="err" id="err"></p><div class="nav"><button class="btn" id="next">Continuar</button><button class="btn ghost" id="back" style="font-size:17px;padding:8px 22px">Voltar</button></div></div>';
+ document.getElementById("next").onclick=function(){
+  var d=document.getElementById("d").value,h=document.getElementById("h").value;
+  if(!d||!h){document.getElementById("err").textContent="Escolha a data e o horário, por favor.";return}
+  A.data=d;A.hora=h;go(3)};
+ document.getElementById("back").onclick=function(){go(1)};
+}
+function qpage(q){
+ var g=A.v[q.k||q.id]||(A.v[q.id]={sel:[],txt:"",c:""}),gate=q.type==="gate",c="";
+ if(gate)c='<button class="chip'+(g.c==="y"?' on':'')+'" data-c="y">Sim</button><button class="chip'+(g.c==="n"?' on':'')+'" data-c="n">Não</button>';
+ else q.o.forEach(function(o,i){c+='<button class="chip'+(g.sel.indexOf(o)>-1?' on':'')+'" data-i="'+i+'">'+esc(o)+'</button>'});
+ app.innerHTML='<div class="card">'+dots()+'<div class="ic">'+q.ic+'</div><h2>'+q.t+'</h2><p class="sub">'+q.s+'</p>'+(c?'<div class="chips">'+c+'</div>':'')+
+  (gate?'<div id="fu"></div>':'<input class="field" id="tx" placeholder="'+esc(q.ph)+'" value="'+esc(g.txt)+'">')+
+  '<p class="err" id="err"></p><div class="nav"><button class="btn" id="next">Continuar</button><button class="btn ghost" id="back" style="font-size:17px;padding:8px 22px">Voltar</button></div></div>';
+ var chips=app.querySelectorAll(".chip");
+ function fu(){var f=document.getElementById("fu");if(!f)return;var o=g.c==="y"?q.y:g.c==="n"?q.n:null;
+  f.innerHTML=o?(o.note?'<p class="note">'+o.note+'</p>':'')+(o.ft?'<label>'+o.ft+'</label><input class="field" id="tx" placeholder="'+esc(o.ph)+'" value="'+esc(g.txt)+'">':''):''}
+ if(gate)fu();
+ [].forEach.call(chips,function(b){b.onclick=function(){
+  if(gate){save(g);g.c=b.dataset.c;g.txt="";[].forEach.call(chips,function(x){x.classList.remove("on")});b.classList.add("on");fu();return}
+  var v=q.o[+b.dataset.i],ix=g.sel.indexOf(v);
+  if(ix>-1){g.sel.splice(ix,1);b.classList.remove("on")}
+  else{if(!q.multi){g.sel=[];[].forEach.call(chips,function(x){x.classList.remove("on")})}g.sel.push(v);b.classList.add("on")}}});
+ document.getElementById("next").onclick=function(){
+  save(g);if(gate&&!g.c){document.getElementById("err").textContent="Escolha sim ou não, por favor.";return}
+  go(step+1)};
+ document.getElementById("back").onclick=function(){save(g);go(step-1)};
+}
+function fin(){
+ app.innerHTML='<div class="card"><p class="orn">♥ ♥ ♥</p><div class="name" style="font-size:52px">Obrigado</div><h2>Obrigado, gatinha comunista misteriosa 💗</h2><p class="sub">Eu li tudo com carinho (e rindo sozinho). Agora é só enviar as respostas para mim pelo Instagram. Já estou ansioso para o nosso encontro.</p><div class="nav"><a class="btn" id="wa" target="_blank" rel="noopener" href="https://ig.me/m/'+INSTAGRAM+'">Copiar respostas e abrir o Instagram</a><p class="err" id="st" style="color:var(--soft)"></p><button class="btn ghost" id="back" style="font-size:17px;padding:8px 22px">Voltar</button></div></div>';
+ document.getElementById("back").onclick=function(){go(step-1)};
+ document.getElementById("wa").onclick=function(){copy(zap());document.getElementById("st").textContent="Respostas copiadas! Cole na conversa e envie 💌"};
+ setTimeout(burst,500);setTimeout(burst,1100);
+}
+function copy(t){var a=document.createElement("textarea");a.value=t;a.style.cssText="position:fixed;opacity:0";document.body.appendChild(a);a.select();try{document.execCommand("copy")}catch(e){}a.remove();if(navigator.clipboard)navigator.clipboard.writeText(t).catch(function(){})}
+function zap(){
+ var f=A.data.split("-"),dt=f.length===3?f[2]+"/"+f[1]+"/"+f[0]:A.data;
+ var L=["Oi! Aqui estão as minhas respostas para o nosso encontro 💌","","✅ Aceitei o convite: sim ♥","📅 Data e hora: "+dt+" às "+A.hora];
+ S.forEach(function(q){
+  if(!q.type)return;
+  var g=A.v[q.id]||{sel:[],txt:"",c:""},val;
+  if(q.type==="gate"){val=!g.c?"sem resposta":(g.c==="y"?"sim":"não")+(g.txt?" — "+g.txt:"")}
+  else{var p=g.sel.slice();if(g.txt)p.push(g.txt);val=p.length?p.join(", "):"sem resposta"}
+  L.push(q.lbl+": "+val)});
+ L.push("","— "+NOME);
+ return L.join("\n");
+}
+render();
+</script>
+</body>
+</html>
